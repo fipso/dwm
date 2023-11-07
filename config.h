@@ -57,8 +57,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "rofi", "-combi", "-modi", "window,drun,ssh", "-show", "combi", "-show-icons", NULL};
+static const char *powermenucmd[] = { "rofi", "-show", "p", "-modi", "p:~/.config/scripts/rofi-power-menu.sh" };
 static const char *termcmd[]  = { "kitty", NULL };
-static const char *powermenu[] = { "sh", "~/.config/scripts/rofi-power-menu.sh" }
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -94,6 +94,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+	{ MODKEY,                       XK_x,      spawn,          {.v = powermenucmd } },
 	{ MODKEY|ShiftMask,             XK_x,      quit,           {0} },
 };
 
